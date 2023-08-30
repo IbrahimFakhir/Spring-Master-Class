@@ -6,9 +6,9 @@
 
     <context:component-scan base-package="demo"></context:component-scan>
 
-<!--    <bean id="doctor" class="demo.Doctor">-->
-<!--        <property name="qualification" value="MBBS"></property>-->
-<!--    </bean>-->
-<!--    <bean id="nurse" class="demo.Nurse"></bean>-->
+    <!--    <bean id="doctor" class="demo.Doctor">-->
+    <!--        <property name="qualification" value="MBBS"></property>-->
+    <!--    </bean>-->
+    <!--    <bean id="nurse" class="demo.Nurse"></bean>-->
 
 </beans>
