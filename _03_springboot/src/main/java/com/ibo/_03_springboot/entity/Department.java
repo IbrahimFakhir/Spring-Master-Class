@@ -7,6 +7,7 @@ import javax.persistence.Id;
 
 @Entity
 public class Department {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long departmentId;
@@ -66,4 +67,5 @@ public class Department {
                 ", departmentCode='" + departmentCode + '\'' +
                 '}';
     }
+
 }
