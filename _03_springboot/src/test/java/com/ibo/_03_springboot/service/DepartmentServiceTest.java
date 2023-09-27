@@ -30,9 +30,9 @@ class DepartmentServiceTest {
                 .departmentId(1L)
                 .build();
 
-        Mockito.when(departmentRepository.
-                findByDepartmentName("IT")).
-                thenReturn(department);
+        Mockito
+                .when(departmentRepository.findByDepartmentName("IT"))
+                .thenReturn(department);
     }
 
     @Test
