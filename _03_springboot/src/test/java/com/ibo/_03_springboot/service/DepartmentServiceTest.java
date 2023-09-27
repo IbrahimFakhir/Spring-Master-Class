@@ -43,4 +43,5 @@ class DepartmentServiceTest {
 
         assertEquals(departmentName, found.getDepartmentName());
     }
+
 }
