@@ -11,10 +11,15 @@
 #  allowed:
 #    resources: /h2-console/**
 
-welcome:
-  message: Welcome to my app
+spring:
+  profiles:
+    active:
+      qa
+
+---
 
 spring:
+  profiles: dev
   jpa:
     hibernate:
       ddl-auto: update
@@ -24,3 +29,37 @@ spring:
     username: root
     password: admin
     driver-class-name: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to my app
+
+---
+
+spring:
+  profiles: qa
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcbapp-qa
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to my app
+
+---
+
+spring:
+  profiles: prod
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/dcbapp-prod
+    username: root
+    password: admin
+    driver-class-name: com.mysql.jdbc.Driver
+welcome:
+  message: Welcome to my app
