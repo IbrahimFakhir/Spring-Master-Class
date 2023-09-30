@@ -48,6 +48,13 @@ spring:
 welcome:
   message: Welcome to my app
 
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+        exclude: "env,beans"
+
 ---
 
 spring:
