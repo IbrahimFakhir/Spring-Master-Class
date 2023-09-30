@@ -11,6 +11,9 @@
 #  allowed:
 #    resources: /h2-console/**
 
+welcome:
+  message: Welcome to my app
+
 spring:
   jpa:
     hibernate:
