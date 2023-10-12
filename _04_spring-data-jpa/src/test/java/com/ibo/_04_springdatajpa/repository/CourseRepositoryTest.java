@@ -1,6 +1,7 @@
 package com.ibo._04_springdatajpa.repository;
 
 import com.ibo._04_springdatajpa.entity.Course;
+import com.ibo._04_springdatajpa.entity.Teacher;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,6 +21,22 @@ class CourseRepositoryTest {
         List<Course> courses = courseRepository.findAll();
 
         System.out.println("courses = " + courses);
+    }
+
+    @Test
+    public void saveCourseWithTeacher() {
+        Teacher teacher = Teacher.builder()
+                .firstName("Priyanka")
+                .lastName("Singh")
+                .build();
+
+        Course course = Course.builder()
+                .title("Python")
+                .credit(6)
+                .teacher(teacher)
+                .build();
+
+        courseRepository.save(course);
     }
 
 }
