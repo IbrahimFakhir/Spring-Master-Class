@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Data
@@ -43,5 +44,8 @@ public class Student {
 
     @Embedded
     private Guardian guardian;
+
+    @ManyToMany(mappedBy = "students")
+    private List<Course> courses;
 
 }
