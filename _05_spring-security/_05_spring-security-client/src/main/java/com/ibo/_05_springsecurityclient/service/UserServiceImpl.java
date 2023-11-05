@@ -1,8 +1,10 @@
 package com.ibo._05_springsecurityclient.service;
 
 import com.ibo._05_springsecurityclient.entity.User;
+import com.ibo._05_springsecurityclient.entity.VerificationToken;
 import com.ibo._05_springsecurityclient.model.UserModel;
 import com.ibo._05_springsecurityclient.repository.UserRepository;
+import com.ibo._05_springsecurityclient.repository.VerificationTokenRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -12,6 +14,9 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     private UserRepository userRepository;
+
+    @Autowired
+    private VerificationTokenRepository verificationTokenRepository;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -29,6 +34,13 @@ public class UserServiceImpl implements UserService {
         userRepository.save(user);
 
         return user;
+    }
+
+    @Override
+    public void saveVerificationTokenForUser(String token, User user) {
+        VerificationToken verificationToken = new VerificationToken(user, token);
+
+        verificationTokenRepository.save(verificationToken);
     }
 
 }
