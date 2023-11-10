@@ -4,6 +4,8 @@ import com.ibo._05_springsecurityclient.entity.User;
 import com.ibo._05_springsecurityclient.entity.VerificationToken;
 import com.ibo._05_springsecurityclient.model.UserModel;
 
+import java.util.Optional;
+
 public interface UserService {
 
 
@@ -15,4 +17,13 @@ public interface UserService {
 
     VerificationToken generateNewVerificationToken(String oldToken);
 
+    User findUserByEmail(String email);
+
+    void createPasswordResetTokenForUser(User user, String token);
+
+    String validatePasswordResetToken(String token);
+
+    Optional<User> getUserByPasswordResetToken(String token);
+
+    void changePassword(User user, String newPassword);
 }
