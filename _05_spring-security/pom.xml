@@ -17,6 +17,7 @@
 
     <modules>
         <module>_05_spring-security-client</module>
+        <module>_05_spring-security-authorization-server</module>
     </modules>
 
 </project>
